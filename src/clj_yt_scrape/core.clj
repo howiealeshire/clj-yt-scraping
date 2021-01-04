@@ -8,6 +8,7 @@
             [com.gfredericks.test.chuck :as chuck]
             [com.gfredericks.test.chuck.generators :as gen']
             [com.gfredericks.test.chuck.properties :as prop']
+            [clj-yt-scrape.parser.parse-api-responses :as yt-parse :refer :all]
             [clojure.test :refer :all])
   (:use clj-http.fake)
   )

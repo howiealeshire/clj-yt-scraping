@@ -1,14 +1,17 @@
 (ns clj-yt-scrape.yt-api.api-params)
 
+(comment
+  (defn base-video-endpoint-params
+    ([]
+     {:part "snippet" :chart "mostPopular" }
+     )
+    ([id]
+     {:part "snippet" :id id}
+     )
+    "https://developers.google.com/youtube/v3/docs/videos/list#parameters"
+    )
 
-(defn base-video-endpoint-params
-  ([]
-   {:part "snippet" :chart "mostPopular" }
-   )
-  ([id]
-   {:part "snippet" :id id}
-   )
-  "https://developers.google.com/youtube/v3/docs/videos/list#parameters"
+
   )
 
 (defn most-popular-vid-by-region-params
