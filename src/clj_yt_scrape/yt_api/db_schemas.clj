@@ -71,6 +71,7 @@
     :db/unique :db.unique/identity
     :db/cardinality :db.cardinality/one
     }
+
    {:db/ident :chan/title
     :db/valueType :db.type/string
     :db/cardinality :db.cardinality/one
@@ -93,6 +94,83 @@
     }
    {:db/ident :chan/exported
     :db/valueType :db.type/boolean
+    :db/cardinality :db.cardinality/one
+    }
+   {:db/ident :chan/url
+    :db/valueType :db.type/string
+    :db/cardinality :db.cardinality/one
+    }
+   {:db/ident :chan/page-token
+    :db/valueType :db.type/string
+    :db/cardinality :db.cardinality/one
+    }
+   ]
+  )
+
+(def search-list-response
+  [
+   {:db/ident :search/id
+    :db/valueType :db.type/string
+    :db/unique :db.unique/identity
+    :db/cardinality :db.cardinality/one
+    }
+   {:db/ident :search/etag
+    :db/valueType :db.type/string
+    :db/unique :db.unique/identity
+    :db/cardinality :db.cardinality/one
+    }
+   {:db/ident :search/url
+    :db/valueType :db.type/string
+    :db/cardinality :db.cardinality/one
+    }
+   ]
+  )
+
+(def search
+    [
+     {:db/ident :search/id
+      :db/valueType :db.type/string
+      :db/unique :db.unique/identity
+      :db/cardinality :db.cardinality/one
+      }
+     {:db/ident :search/etag
+      :db/valueType :db.type/string
+      :db/unique :db.unique/identity
+      :db/cardinality :db.cardinality/one
+      }
+     {:db/ident :search/url
+      :db/valueType :db.type/string
+      :db/cardinality :db.cardinality/one
+      }
+     ]
+  )
+
+(def query
+  [
+   {:db/ident :query/id
+    :db/valueType :db.type/string
+    :db/unique :db.unique/identity
+    :db/cardinality :db.cardinality/one
+    }
+   {:db/ident :query/searches
+    :db/valueType :db.type/ref
+    :db/cardinality :db.cardinality/many
+    }
+   ;;make the terms type a composite tuple of 8 terms, ones that aren't filled are turned into trailing nils, so it's fine.
+   {:db/ident :query/terms
+    :db/valueType :db.type/tuple
+    :db/tupleAttrs [:term/id :term/id :term/id :term/id :term/id :term/id :term/id :term/id]
+    :db/cardinality :db.cardinality/one
+    :db/unique :db.unique/identity
+    }
+   ]
+  )
+
+(def term
+  [
+   {:db/ident :term/id
+    :db/valueType :db.type/string
+    :db/unique :db.unique/identity
     :db/cardinality :db.cardinality/one
     }
    ]
@@ -133,5 +211,14 @@
     :db/valueType :db.type/boolean
     :db/cardinality :db.cardinality/one
     }
+   {:db/ident :vid/url
+    :db/valueType :db.type/string
+    :db/cardinality :db.cardinality/one
+    }
+   {:db/ident :vid/page-token
+    :db/valueType :db.type/string
+    :db/cardinality :db.cardinality/one
+    }
+
    ]
   )
