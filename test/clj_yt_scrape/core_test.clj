@@ -254,20 +254,17 @@
   (remove-deep [:prevPageToken] sample-search-list-response)
   )
 
-(deftest test-video-endpoint
-  (is (= (keys sample-vid-list-response) (keys (get-most-popular-vids-by-region)) ) "Testing top-level keys equality." )
-  (is (= (keys (:body sample-vid-list-response) ) (keys (:body (get-most-popular-vids-by-region))) ) "Testing body-level keys equality." )
-  )
+;; (deftest test-video-endpoint
+;;   (is (= (keys sample-vid-list-response) (keys (get-most-popular-vids-by-region)) ) "Testing top-level keys equality." )
+;;   (is (= (keys (:body sample-vid-list-response) ) (keys (:body (get-most-popular-vids-by-region))) ) "Testing body-level keys equality." )
+;;   )
 
-(deftest test-search-endpoint
-  (is (= (keys sample-search-list-response) (keys (get-most-popular-channels-by-query)) ) "Testing top-level keys equality." )
-  (is (= (keys (:body sample-search-list-response) ) (keys (:body (get-most-popular-channels-by-query))) ) "Testing body-level keys equality." )
-  )
+;(deftest test-search-endpoint
+;  (is (= (keys sample-search-list-response) (keys (get-most-popular-channels-by-query)) ) "Testing top-level keys equality." )
+;  (is (= (keys (:body sample-search-list-response) ) (keys (:body (get-most-popular-channels-by-query))) ) "Testing body-level keys equality." )
+;  )
 
-(deftest test-channel-endpoint
-  (is (= (keys sample-channel-list-response) (keys (get-channel-from-channel-id)) ) "Testing top-level keys equality." )
-  (is (= (keys (:body sample-channel-list-response) ) (keys (:body (get-channel-from-channel-id))) ) "Testing body-level keys equality." )
-  )
-
-
-
+;; (deftest test-channel-endpoint
+;;   (is (= (keys sample-channel-list-response) (keys (get-channel-from-channel-id)) ) "Testing top-level keys equality." )
+;;   (is (= (keys (:body sample-channel-list-response) ) (keys (:body (get-channel-from-channel-id))) ) "Testing body-level keys equality." )
+;;   )

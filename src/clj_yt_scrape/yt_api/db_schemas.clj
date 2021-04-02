@@ -2,8 +2,7 @@
 
 
 
-
-(comment
+#_(comment
   table_name_channels: str = 'channels'
   table_name_posts: str = 'instagram_post'
   table_name_insta_users: str = 'instagram_users'

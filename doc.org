@@ -1,0 +1,31 @@
+* Purpose
+  This doc should serve as the README for this project.
+
+* Overview
+  This application is called clj-yt-scrape.
+
+* Deliverable
+  The final deliverable is an application which scrapes 50000 records from Youtube daily.
+  It should be 50000+ channels, and 50000+ videos.
+
+* Architecture
+** Overview
+   The system is currently composed of the following components:
+*** Parser
+    Receives the API responses after API requests them. Parses them into a usable form to write to the DB.
+*** API (request layer)
+    Makes the actual requests to Youtube Data API. Also switches between projects (and possibly users, though this requires investigation, see issue #_____)
+    so as to get the max possible number of records.
+*** Database Interaction
+    The layer that takes objects that have been properly formatted and writes them to the db.
+    [Might not need to be a separate layer]
+*** Database
+    The actual database.
+*** Runner
+   Runs in batches (rather than continuous streams)
+  For exporting, it is not a separate component (yet), but it simply should write the datatypes to csv. Then send to the Azure server.
+
+
+** Ideas
+*** Social Graph
+    It might help to have a data structure which catalogs the connections between the influencers.

@@ -7,6 +7,8 @@
                  [clj-http "3.11.0"]
                  [meander/epsilon "0.0.588"]
                  [org.clojure/test.check "1.1.0"]
+                 [aero "1.1.6"]
+                 [mount "0.1.16"]
                  [cheshire "5.10.0"]
                  ]
   :main ^:skip-aot clj-yt-scrape.core
